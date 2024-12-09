@@ -9,17 +9,18 @@ public class InefficientValidation {
 
     boolean hasDuplicates = false;
 
-    for (int i = 0; i < userIds.size(); i++) {
+    for (int i = 0;
+        i < userIds.size();
+        i++) { //    Inefficient Approach (Nested Loops): 1,2 3, 4, 4,6
       for (int j = i + 1; j < userIds.size(); j++) {
         if (userIds.get(i).equals(userIds.get(j))) {
-          hasDuplicates = true; // Duplicate found
+          hasDuplicates =
+              true; // Duplicate found  - Uses two loops to compare each user ID with all others
+          // (O(n²)). Slows significantly as the dataset grows.
           break;
         }
       }
     }
-//    Inefficient Approach (Nested Loops):
-//    Uses two loops to compare each user ID with all others (O(n²)).
-//            Slows significantly as the dataset grows.
 
     long endTime = System.currentTimeMillis(); // End timer
 

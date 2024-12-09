@@ -6,6 +6,7 @@ import java.util.List;
 /** Hello world! */
 public class BadAlgorithm {
   public static void main(String[] args) {
+
     // Generate a large list of user IDs for testing
     List<String> userIds = new ArrayList<>();
     for (int i = 0; i < 100000; i++) {

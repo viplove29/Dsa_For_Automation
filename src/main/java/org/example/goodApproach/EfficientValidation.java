@@ -13,14 +13,25 @@ public class EfficientValidation {
     Set<String> uniqueUsers = new HashSet<>();
     boolean hasDuplicates = false;
 
-    for (String userId : userIds) {
-      if (!uniqueUsers.add(userId)) {
+    for (String userId :
+        userIds) { //    Iterate Through the List: The loop iterates over each userId in the userIds
+      // list.
+      if (!uniqueUsers.add(userId)) { //    Add User ID to the HashSet:
         hasDuplicates = true; // Duplicate found
       }
     }
-//    Efficient Approach (HashSet):
-//    Uses a HashSet for constant-time checks (O(1)).
-//            Scales well with larger datasets.
+    //    The uniqueUsers.add(userId) method tries to add the current userId to the HashSet.
+    //    Check if the Add Was Successful:
+    //    The add() method of a HashSet returns:
+    //    true if the element is not already in the set (it’s added successfully).
+    //    false if the element is already in the set (indicating a duplicate).
+    //   Mark Duplicates:
+    // If add() returns false (duplicate found), the hasDuplicates flag is set to true.
+    //  Why Use a HashSet?
+    //       Efficient Checking:
+    //    A HashSet has an average time complexity of O(1) for add() operations.
+    //    This makes it much faster than checking for duplicates using nested loops, which has a
+    // time complexity of O(n²).
 
     long endTime = System.currentTimeMillis(); // End timer
 
